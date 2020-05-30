@@ -6,3 +6,6 @@ Repository for web-examples and labs
 
 
 [web-example1](https://OlehPomirko.github.io/Example-1/ "Web-example1")
+
+
+[lab1](https://OlehPomirko.github.io/lab1/ "lab1")
