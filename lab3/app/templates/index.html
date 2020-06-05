@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet" />
+    <link href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css" rel="stylesheet">
+    <title>web-3</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='slick/slick-theme.css') }}">
+    
+  </head>
+  <body class="body" style="
+   background-image:url(../static/resources/mainbg.jpg);">
+
+        <div class="topic">
+          <div class="row">
+             <div class="col-xl-4 col-lg-3 col-md-3 col-sm-3">
+               <div class="hello">
+                <h2 style="font-size: 25px;">Привіт, {{ current_user.username }}</h2>
+               </div>
+             </div>
+
+             <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-5 col-sm-3">
+             <a  href="{{ url_for('index') }}" class="nav-link">Home</a>
+             </div>
+             <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+             <nav>
+             <ul>
+            
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('login') }}" class="nav-link">Login</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            {% endif %}
+          </ul>
+           </nav>
+            </div>
+          </div>  
+    </div>
+
+        <div class="main-content" style="margin-top: 100px;">
+          <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+              <div class="main-title">
+                <h1>Sale for consultation!</h1>
+                <h5 >The best worker consultate you!<br> Only this weekend SALE 70%</h5>
+                <span>
+                Only 6.99$/per one! 
+                </span>
+              </div>
+            </div>
+            <div class="col-lg-4 offset-lg-2 col-md-5 offset-md-1 col-sm-8 offset-sm-2">
+              <div class="main-form">
+                <h2>Leave your data
+                  <br> to contact with us!</h2>
+                <form action="#">
+                  <label for="#">Your name</label>
+                  <input type="text" name="" class="input-form">
+                  <label for="#">Your telephone</label>
+                  <input type="text" name=""
+                  class="input-form">
+                  <button class="main-form-btn button" type="submit">Leave anket</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+    <section class="features">
+      <div class="container">
+        <h2 class="secion-header">
+          Features of getting our product
+        </h2>
+        <div class="features-slider">
+          <div class="features-block">
+            <div class="features-img">
+              <picture>
+                <source srcset="../static/resources/slider/1.png" type="image/">
+                <img src="../static/resources/slider/1.png" alt="Feature-1">
+              </picture>
+            </div>
+            <h3>Feature-1</h3>
+            <p>Some text to fill the field instead of lorem ipsum</p>
+          </div>
+          <div class="features-block">
+            <div class="features-img">
+              <picture>
+                <source srcset="../static/resources/slider/2.png" type="image/">
+                <img src="../static/resources/slider/2.png" alt="Feature-2">
+              </picture>
+            </div>
+            <h3>Feature-2</h3>
+            <p>Some text to fill the field instead of lorem ipsum</p>
+          </div>
+          <div class="features-block">
+            <div class="features-img">
+              <picture>
+                <source srcset="../static/resources/slider/1.png" type="image/">
+                <img src="../static/resources/slider/1.png" alt="Feature-3">
+              </picture>
+            </div>
+            <h3>Feature-3</h3>
+            <p>Some text to fill the field instead of lorem ipsum</p>
+          </div>
+          <div class="features-block">
+            <div class="features-img">
+              <picture>
+                <source srcset="../static/resources/slider/2.png" type="image/">
+                <img src="../static/resources/slider/2.png" alt="Feature-4">
+              </picture>
+            </div>
+            <h3>Feature-4</h3>
+            <p>Some text to fill the field instead of lorem ipsum</p>
+          </div>
+        </div>
+      </div>
+    
+<section class="prices">
+  <div class="container">
+    <div class="row prices-topic">
+
+      <div class="col-xl-4 col-lg-4 col-md-4 ">
+        <div class="logo">
+          <img src="../static/resources/product/3.png" id="log" alt="no-image, sorry">
+        </div>
+      </div>
+
+    <div class="col-xl-4 col-lg-4 col-md-6">
+      <div class=" header-price">
+        <h2>Prices:</h2>
+        <p>Choose Your Plan<p>
+      </div>
+    </div>    
+  </div>
+
+  <div class="row">
+    <div class="col-md-4 sm-12">
+      <div class="price-block">
+        <h2>Family</h2>
+        <img class="prod-im" src="../static/resources/product/1.png" alt="sorry,no-image">
+        <button class="button pri-btn prin-btn">Purchase</button>
+      </div>
+    </div>
+
+    <div class="col-md-4 sm-12">
+      <div class="price-block">
+        <h2>Buisness</h2>
+        <img class="prod-im" src="../static/resources/product/2.png" alt="sorry,no-image">
+        <button class="button pri-btn prin-btn">Purchase</button>
+      </div>
+    </div>
+
+    <div class="col-md-4 sm-12">
+      <div class="price-block">
+        <h2>Criminal</h2>
+        <img class="prod-im" src="../static/resources/product/3.png" alt="sorry,no-image">
+        <button class="button pri-btn prin-btn">Purchase</button>
+      </div> 
+    </div>
+
+   </div>
+ </div>
+</section>
+
+
+
+<div class="dsc">
+    <div class="popup">
+      <div class="popup-dialog">
+        <div class="popup-content">
+          <button class="popup-close">&clubs;</button>
+          <h3 class="popup-header">Interested in consultation?</h3>
+          <p>Leave your contacts</p>
+          <div class="popup-form">
+            <form action="#">
+            <label for="#">Your name
+            </label>
+              <input class="input-form">
+            <label for="#">Your telephone
+            </label>
+            <input class="input-form">
+            <label for="#">Message
+            </label>
+            <textarea class="input-form" rows="3"></textarea>
+            <button class="main-form-btn button" type="submit">Leave..  data</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+ 
+<div class="bsc">
+    <div class="popup">
+      <div class="popup-dialog">
+        <div class="popup-content">
+          <button class="popup-close">&clubs;</button>
+          <h3 class="popup-header">have questions?</h3>
+          <p>Leave your contacts</p>
+          <div class="popup-form">
+            <form action="#">
+            <label for="#">Your name
+            </label>
+              <input class="input-form">
+            <label for="#">Your telephone
+            </label>
+            <input class="input-form">
+            <label for="#">Your question
+            </label>
+            <textarea class="input-form" rows="3"></textarea>
+            <button class="main-form-btn button" type="submit">Leave..  data</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>   
+
+<div class="gsc">
+    <div class="popup">
+      <div class="popup-dialog">
+        <div class="popup-content">
+          <button class="popup-close">&clubs;</button>
+          <h3 class="popup-header">Purchase product?</h3>
+          <p>Leave your contacts</p>
+          <div class="popup-form">
+            <form action="#">
+            <label for="#">Your name
+            </label>
+              <input class="input-form">
+            <label for="#">Your credit card
+            </label>
+            <input class="input-form">
+            <label for="#">CCV
+            </label>
+            <textarea class="input-form" rows="3"></textarea>
+            <button class="main-form-btn button" type="submit">Leave..  data</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>   
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="../static/slick/slick.min.js"></script>
+    
+   
+     <script>
+     
+
+      $(document).ready(function(){
+      $(".popup-btn").click(function(event){
+        event.preventDefault();
+        $(".popup").show("slow");     
+      });
+      $(".popup-btn").click(function(event){
+        event.preventDefault();
+        $(".dsc").show("slow");     
+      });
+
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".popup").hide("slow");     
+      });
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".dsc").hide("slow");     
+      });
+
+
+      $(".price-btn").click(function(event){
+        event.preventDefault();
+        $(".popup").show("slow");     
+      });
+      $(".price-btn").click(function(event){
+        event.preventDefault();
+        $(".bsc").show("slow");     
+      });
+
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".popup").hide("slow");     
+      });
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".bsc").hide("slow");     
+      });
+      
+
+      $(".prin-btn").click(function(event){
+        event.preventDefault();
+        $(".popup").show("slow");     
+      });
+      $(".prin-btn").click(function(event){
+        event.preventDefault();
+        $(".gsc").show("slow");     
+      });
+
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".popup").hide("slow");     
+      });
+      $(".popup-close").click(function(event){
+        event.preventDefault();
+        $(".gsc").hide("slow");     
+      });
+        $('.features-slider').slick({
+        infinite: true,
+        slidesToShow:4,
+        slidesToScroll:1,
+         responsive: [
+
+    {
+      breakpoint: 991,
+      settings: {
+        slidesToShow: 2,
+        prevArrow:'<button class="prev"></button>',
+        nextArrow:'<button class="next"></button>',
+        slidesToScroll: 2
+      }
+    },
+    {
+      breakpoint: 767,
+      settings: {
+        slidesToShow: 1,
+         prevArrow:'<button class="prev"></button>',
+        nextArrow:'<button class="next"></button>',
+        slidesToScroll: 1
+      }
+    }
+  ]
+       });
+       });
+     </script>
+
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
