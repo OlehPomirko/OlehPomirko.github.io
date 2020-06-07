@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.materialdesignicons.com/3.8.95/css/materialdesignicons.min.css" rel="stylesheet">
+
+  <title>web-4</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+</head>
+<body class="body">
+
+<div class="topic1">
+  <div class="row">
+         <div class="col-xl-4 col-lg-3 col-md-3 col-sm-3">
+         <div class="logo">
+          <img src="../static/resources/product/3.png" id="logoss" alt="no-image, sorry">
+        </div>
+         </div>
+
+         <div class="col-xl-4 offset-xl-1 col-lg-4 offset-lg-1 col-md-3 col-sm-3  home">
+             <a  href="{{ url_for('index') }}" class="nav-link">Home</a>
+         </div>
+
+       <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3  logout_in"> 
+            <nav>
+            <ul>
+            {% if current_user.is_anonymous %}
+            <a href="{{ url_for('register') }}" class="nav-link">Register</a>
+            {% else %}
+            <a href="{{ url_for('logout') }}" class="nav-link">Logout</a>
+            {% endif %}
+            </ul>
+            </nav>
+       </div>
+    </div>  
+</div>
+
+/////
+  <section class="form">
+    <div class="container">
+      <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1"></div>
+            <div class="col-xl-5 col-lg-5 col-md-7 col-sm-9 formreg">
+        <form action="" method="post" novalidate>
+            <h2 class="login-form-h2">Sign In</h2>
+            {{ form.hidden_tag() }}
+            <div class="input">
+                <p>
+                    {{ form.username.label }}<br>
+                    {{ form.username(size=32) }}<br>
+                    {% for error in form.username.errors %}
+                    <span style="color: orange;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="input">
+                <p>
+                    {{ form.password.label }}<br>
+                    {{ form.password(size=32) }}<br>
+                    {% for error in form.password.errors %}
+                    <span style="color: red;">[{{ error }}]</span>
+                    {% endfor %}
+                </p>
+            </div>
+            <div class="input">
+                <p>{{ form.remember_me() }} {{ form.remember_me.label }}</p>
+                <p class="submit">{{ form.submit() }}</p>
+            </div>
+            <div class="register">
+                <h3>New User?</h3><h3> <a href="{{ url_for('register') }}">Click to Register!</a></h3>
+            </div>
+        </form>
+         </div>
+        <div class="col-xl-3 col-lg-3 col-md-2 col-sm-1"></div>
+    </div>
+  </div>
+  </section>
+</body>
+</html>
